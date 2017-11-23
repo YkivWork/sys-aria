@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/apikit" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/apikit http://www.mulesoft.org/schema/mule/apikit/current/mule-apikit.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+    <http:listener-config name="api-httpListenerConfig" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
+    <apikit:config name="api-config" raml="api.raml" consoleEnabled="false" doc:name="Router"/>
+    <flow name="api-main">
+        <http:listener config-ref="api-HTTP_Listener_Configuration" path="/api/*" doc:name="HTTP"/>
+        <apikit:router config-ref="api-config" doc:name="APIkit Router"/>
+        <exception-strategy ref="api-apiKitGlobalExceptionMapping" doc:name="Reference Exception Strategy"/>
+    </flow>
+    <flow name="api-console">
+        <http:listener config-ref="api-HTTP_Listener_Configuration" path="/console/*" doc:name="HTTP"/>
+        <apikit:console config-ref="api-config" doc:name="APIkit Console"/>
+    </flow>
+    <flow name="get:/aria/account-contacts:api-config">
+        <set-variable variableName="accountNumber" value="#[message.inboundProperties.'http.query.params'.accountNumber]" doc:name="accountNumber"/>
+        <flow-ref name="getAcctContactsM" doc:name="getAcctContactsM"/>
+    </flow>
+     <flow name="get:/aria/account-details:api-config">
+        <set-variable variableName="accountNumber" value="#[message.inboundProperties.'http.query.params'.accountNumber]" doc:name="accountNumber"/>
+        <flow-ref name="getAcctDetailsAllM" doc:name="getAcctDetailsAllM"/>
+    </flow>
+    <flow name="get:/aria/healthcheck:api-config">
+        <flow-ref name="health-checkFlow" doc:name="health-checkFlow"/>
+    </flow>
+    <flow name="get:/aria/invoice-details:api-config">
+        <set-variable variableName="accountNumber" value="#[message.inboundProperties.'http.query.params'.accountNumber]" doc:name="accountNumber"/>
+        <set-variable variableName="invoiceNumber" value="#[message.inboundProperties.'http.query.params'.invoiceNumber]" doc:name="invoiceNumber"/>
+        <flow-ref name="getinvoicedetailsmFlow" doc:name="getinvoicedetailsmFlow"/>
+    </flow>
+    <flow name="get:/aria/credit-memo:api-config">
+        <set-variable variableName="accountNumber" value="#[message.inboundProperties.'http.query.params'.accountNumber]" doc:name="accountNumber"/>
+        <set-variable variableName="cmNumber" value="#[message.inboundProperties.'http.query.params'.cmNumber]" doc:name="cmNumber"/>
+        <flow-ref name="getCmDetailsM" doc:name="getCmDetailsM"/>
+    </flow>
+    <flow name="get:/aria/billing-group:api-config">
+        <set-variable variableName="accountNumber" value="#[message.inboundProperties.'http.query.params'.accountNumber]" doc:name="accountNumber"/>
+        <flow-ref name="getAcctBillingGroupDetailsM" doc:name="getAcctBillingGroupDetailsM"/>
+    </flow>
+    <flow name="get:/aria/order:api-config">
+        <set-variable variableName="accountNumber" value="#[message.inboundProperties.'http.query.params'.accountNumber]" doc:name="accountNumber"/>
+        <set-variable variableName="orderNumber" value="#[message.inboundProperties.'http.query.params'.orderNumber]" doc:name="orderNumber"/>
+        <flow-ref name="getOrderM" doc:name="getOrderM"/>
+    </flow>
+    <flow name="get:/aria/html-invoice:api-config">
+        <set-variable variableName="accountNumber" value="#[message.inboundProperties.'http.query.params'.accountNumber]" doc:name="accountNumber"/>
+        <set-variable variableName="invoiceNumber" value="#[message.inboundProperties.'http.query.params'.invoiceNumber]" doc:name="invoiceNumber"/>
+        <flow-ref name="getStatmentForInvoiceM" doc:name="getStatmentForInvoiceM"/>
+    </flow>
+    <flow name="get:/aria/html-void-invoice:api-config">
+        <set-variable variableName="accountNumber" value="#[message.inboundProperties.'http.query.params'.accountNumber]" doc:name="accountNumber"/>
+        <set-variable variableName="invoiceNumber" value="#[message.inboundProperties.'http.query.params'.invoiceNumber]" doc:name="invoiceNumber"/>
+        <flow-ref name="getvoidhtmlFlow" doc:name="getvoidhtmlFlow"/>
+    </flow>
+    <flow name="get:/aria/update-contact:api-config">
+        <set-variable variableName="accountNumber" value="#[message.inboundProperties.'http.query.params'.accountNumber]" doc:name="accountNumber"/>
+        <set-variable variableName="contactInd" value="#[message.inboundProperties.'http.query.params'.contactInd]" doc:name="contactInd"/>
+        <set-variable variableName="billingGroupNumber" value="#[message.inboundProperties.'http.query.params'.billingGroupNumber]" doc:name="billingGroupNumber"/>
+        <set-variable variableName="firstName" value="#[message.inboundProperties.'http.query.params'.firstName]" doc:name="firstName"/>
+        <set-variable variableName="lastName" value="#[message.inboundProperties.'http.query.params'.lastName]" doc:name="lastName"/>
+        <set-variable variableName="middleInitial" value="#[message.inboundProperties.'http.query.params'.middleInitial]" doc:name="middleInitial"/>
+        <set-variable variableName="companyName" value="#[message.inboundProperties.'http.query.params'.companyName]" doc:name="companyName"/>
+        <set-variable variableName="address1" value="#[message.inboundProperties.'http.query.params'.address1]" doc:name="address1"/>
+        <set-variable variableName="address2" value="#[message.inboundProperties.'http.query.params'.address2]" doc:name="address2"/>
+        <set-variable variableName="address3" value="#[message.inboundProperties.'http.query.params'.address3]" doc:name="address3"/>
+        <set-variable variableName="city" value="#[message.inboundProperties.'http.query.params'.city]" doc:name="city"/>
+        <set-variable variableName="locality" value="#[message.inboundProperties.'http.query.params'.locality]" doc:name="locality"/>
+        <set-variable variableName="stateProvince" value="#[message.inboundProperties.'http.query.params'.stateProvince]" doc:name="stateProvince"/>
+        <set-variable variableName="country" value="#[message.inboundProperties.'http.query.params'.country]" doc:name="country"/>
+        <set-variable variableName="postalCode" value="#[message.inboundProperties.'http.query.params'.postalCode]" doc:name="postalCode"/>
+        <set-variable variableName="phone" value="#[message.inboundProperties.'http.query.params'.phone]" doc:name="phone"/>
+        <set-variable variableName="email" value="#[message.inboundProperties.'http.query.params'.email]" doc:name="email"/>
+        <flow-ref name="updateContactM" doc:name="updateContactM"/>
+    </flow>
+    <flow name="post:/aria/closure-work-order:api-config">
+        <set-variable variableName="splitBillingAccount" value="#[message.inboundProperties.'http.query.params'.SplitBillingAccounts]" doc:name="splitBillingAccount"/>
+        <flow-ref name="createOrderM-Closure" doc:name="createOrderM-Closure"/>
+
+    </flow>
+    <flow name="post:/aria/non-closure-work-order:api-config">
+        <flow-ref name="createOrderM-NonClosure" doc:name="createOrderM-NonClosure"/>
+
+    </flow>
+    <apikit:mapping-exception-strategy name="api-apiKitGlobalExceptionMapping">
+        <apikit:mapping statusCode="404">
+            <apikit:exception value="org.mule.module.apikit.exception.NotFoundException" />
+            <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+            <set-payload value="{ &quot;message&quot;: &quot;Resource not found&quot; }" doc:name="Set Payload"/>
+        </apikit:mapping>
+        <apikit:mapping statusCode="405">
+            <apikit:exception value="org.mule.module.apikit.exception.MethodNotAllowedException" />
+            <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+            <set-payload value="{ &quot;message&quot;: &quot;Method not allowed&quot; }" doc:name="Set Payload"/>
+        </apikit:mapping>
+        <apikit:mapping statusCode="415">
+            <apikit:exception value="org.mule.module.apikit.exception.UnsupportedMediaTypeException" />
+            <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+            <set-payload value="{ &quot;message&quot;: &quot;Unsupported media type&quot; }" doc:name="Set Payload"/>
+        </apikit:mapping>
+        <apikit:mapping statusCode="406">
+            <apikit:exception value="org.mule.module.apikit.exception.NotAcceptableException" />
+            <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+            <set-payload value="{ &quot;message&quot;: &quot;Not acceptable&quot; }" doc:name="Set Payload"/>
+        </apikit:mapping>
+        <apikit:mapping statusCode="400">
+            <apikit:exception value="org.mule.module.apikit.exception.BadRequestException" />
+            <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+            <set-payload value="{ &quot;message&quot;: &quot;Bad request&quot; }" doc:name="Set Payload"/>
+        </apikit:mapping>
+    </apikit:mapping-exception-strategy>
+</mule>

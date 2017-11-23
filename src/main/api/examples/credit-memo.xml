@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:ns1="urn:client:api:wsdl:document/literal_wrapped:vers:11.0:aria_complete_m_api"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<ns1:get_cm_details_mResponseElement>
+			<ns1:error_code>0</ns1:error_code>
+			<ns1:error_msg>OK</ns1:error_msg>
+			<ns1:cm_no_out>10679502</ns1:cm_no_out>
+			<ns1:client_cm_seq_id>1000069</ns1:client_cm_seq_id>
+			<ns1:created_by>lmahone.dev (CSR Tools)</ns1:created_by>
+			<ns1:created_date>2017-10-06</ns1:created_date>
+			<ns1:credit_reason_code>1</ns1:credit_reason_code>
+			<ns1:credit_comments>Aria system generated credit memo to close out the rebilled invoice at the time of rebilling.</ns1:credit_comments>
+			<ns1:orig_invoice_no>10664565</ns1:orig_invoice_no>
+			<ns1:cm_total>18.75</ns1:cm_total>
+			<ns1:cm_line_details>
+				<ns1:cm_line_no>1</ns1:cm_line_no>
+				<ns1:cm_transaction_id>22798432</ns1:cm_transaction_id>
+				<ns1:cm_void_transaction_id xsi:nil="true"/>
+				<ns1:cm_line_amount>18.75</ns1:cm_line_amount>
+			</ns1:cm_line_details>
+			<ns1:cm_tax_details xsi:nil="true"/>
+		</ns1:get_cm_details_mResponseElement>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

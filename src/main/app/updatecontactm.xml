@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd">
+    <flow name="updateContactM" processingStrategy="synchronous">
+        <logger level="INFO" doc:name="Start of Flow Logger" category="com.merrillcorp.logging.updatecontactm" message="Entered_Flow=#[flow.name]  MessageId=#[message.id]"/>
+        <choice doc:name="Choice">
+            <when expression="flowVars.contact_ind == 4">
+                <dw:transform-message doc:name="Transform Message">
+                    <dw:set-payload><![CDATA[%dw 1.0
+%output application/xml
+%namespace soap http://schemas.xmlsoap.org/soap/envelope/
+---
+{
+  soap#Envelope: {
+    soap#Header: {},
+    soap#Body: {
+      update_contact_m @(xmlns: p('aria.update_contact.url')): {
+        client_no: p('aria.client_no'),
+        auth_key: p('aria.auth_key'),
+        acct_no: flowVars.billingSystemAccountId,
+        contact_ind: flowVars.contactInd,
+        billing_group_no: flowVars.billingGroupNumber,
+        first_name: flowVars.firstName,
+        last_name: flowVars.lastName,
+        middle_initial: flowVars.middleInitial,
+        company_name: flowVars.companyName,
+        address1: flowVars.address1,
+        address2: flowVars.address2,
+        address3: flowVars.address3,
+        city: flowVars.city,
+        locality: flowVars.locality,
+        state_prov: flowVars.stateProvince,
+        country_cd: flowVars.country,
+        postal_cd: flowVars.postalCode,
+        phone: flowVars.phone,
+        email: flowVars.email
+      }
+    }
+  }
+}]]></dw:set-payload>
+                </dw:transform-message>
+            </when>
+            <otherwise>
+                <dw:transform-message doc:name="Transform Message">
+                    <dw:set-payload><![CDATA[%dw 1.0
+%output application/xml
+%namespace soap http://schemas.xmlsoap.org/soap/envelope/
+---
+{
+  soap#Envelope: {
+    soap#Header: {},
+    soap#Body: {
+      update_contact_m @(xmlns: p('aria.update_contact.url')): {
+        client_no: p('aria.client_no'),
+        auth_key: p('aria.auth_key'),
+        acct_no: flowVars.ariaAccount,
+        contact_ind: flolwVars.contactInd,
+        company_name: flowVars.CompanyName
+      }
+    }
+  }
+}]]></dw:set-payload>
+                </dw:transform-message>
+            </otherwise>
+        </choice>
+        <set-variable variableName="payloadBeforeUntillSuccess" value="#[payload]" doc:name="payloadBeforeUntillSuccess"/>
+        <until-successful maxRetries="${aria.http.max.retries}" millisBetweenRetries="${aria.http.milliSecondsBetweenRetries}" failureExpression="exception!=null &amp;&amp; (exception.causedBy(java.io.IOException) || exception.causedBy(java.net.ConnectException)  || exception.causedBy(java.net.SocketTimeoutException))" synchronous="true" doc:name="Until Successful">
+            <http:request config-ref="HTTP_Aria_Configuration" path="${aria.path}" method="POST" doc:name="HTTP">
+                <http:request-builder>
+                    <http:header headerName="SOAPAction" value="&quot;update_contact_m&quot;"/>
+                </http:request-builder>
+            </http:request>
+        </until-successful>
+        <logger level="INFO" doc:name="End of Flow Logger" category="com.merrillcorp.logging.updatecontactm" message="Completed_Flow=#[flow.name]  MessageId=#[message.id]"/>
+    </flow>
+</mule>

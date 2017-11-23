@@ -1,0 +1,20 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header/>
+  <soap:Body>
+    <lit:create_order_m xmlns:lit="urn:client:api:wsdl:document/literal_wrapped:vers:6.50.1:aria_complete_m_api">
+      <client_no>6000228</client_no>
+      <auth_key>R3WSkfamtH9bMUrACMtm7FAtx7u8vYFy</auth_key>
+      <acct_no>1302249</acct_no>
+      <client_plan_instance_id>1761173</client_plan_instance_id>
+      <client_order_id>WO-1704049</client_order_id>
+      <order_comments xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+      <order_line_items>
+        <order_line_items_row>
+          <client_sku>2240</client_sku>
+          <units>1</units>
+          <amount>36.5</amount>
+        </order_line_items_row>
+      </order_line_items>
+    </lit:create_order_m>
+  </soap:Body>
+</soap:Envelope>

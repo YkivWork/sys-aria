@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:ns1="urn:client:api:wsdl:document/literal_wrapped:vers:11.0:aria_complete_m_api"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<ns1:get_invoice_details_mResponseElement>
+			<ns1:error_code>0</ns1:error_code>
+			<ns1:error_msg>OK</ns1:error_msg>
+			<ns1:invoice_line_details>
+				<ns1:line_no>1</ns1:line_no>
+				<ns1:service_no>11023545</ns1:service_no>
+				<ns1:service_name>Minimum Fee for Pages Processed</ns1:service_name>
+				<ns1:units>1</ns1:units>
+				<ns1:rate_per_unit>25</ns1:rate_per_unit>
+				<ns1:amount>25</ns1:amount>
+				<ns1:description>Monthly Minimum Fee</ns1:description>
+				<ns1:date_range_start>2017-10-06</ns1:date_range_start>
+				<ns1:date_range_end>2017-11-05</ns1:date_range_end>
+				<ns1:usage_type_no xsi:nil="true"/>
+				<ns1:plan_no>38778</ns1:plan_no>
+				<ns1:plan_name>Pages Uploaded</ns1:plan_name>
+				<ns1:credit_reason_cd xsi:nil="true"/>
+				<ns1:credit_reason_code_description xsi:nil="true"/>
+				<ns1:csr_comments xsi:nil="true"/>
+				<ns1:client_sku xsi:nil="true"/>
+				<ns1:order_no xsi:nil="true"/>
+				<ns1:item_no xsi:nil="true"/>
+				<ns1:client_service_id>PgMinimumFee</ns1:client_service_id>
+				<ns1:usage_type_cd xsi:nil="true"/>
+				<ns1:client_plan_id>Pages_Uploaded</ns1:client_plan_id>
+				<ns1:client_item_id xsi:nil="true"/>
+				<ns1:base_plan_units xsi:nil="true"/>
+				<ns1:proration_factor xsi:nil="true"/>
+				<ns1:proration_text xsi:nil="true"/>
+				<ns1:adv_billing_period_total_days xsi:nil="true"/>
+				<ns1:proration_remaining_days xsi:nil="true"/>
+				<ns1:proration_description xsi:nil="true"/>
+				<ns1:line_type>1</ns1:line_type>
+				<ns1:rate_schedule_no xsi:nil="true"/>
+				<ns1:client_rate_schedule_id xsi:nil="true"/>
+				<ns1:rate_schedule_tier_no xsi:nil="true"/>
+				<ns1:credit_coupon_code xsi:nil="true"/>
+				<ns1:plan_instance_no>3103131</ns1:plan_instance_no>
+				<ns1:client_plan_instance_id>3103131</ns1:client_plan_instance_id>
+				<ns1:tax_related_ind>0</ns1:tax_related_ind>
+				<ns1:svc_credit_source_invoice_no xsi:nil="true"/>
+				<ns1:svc_credit_source_line_no xsi:nil="true"/>
+				<ns1:svc_credit_source_trans_id xsi:nil="true"/>
+				<ns1:svc_credit_applied_line_no xsi:nil="true"/>
+				<ns1:svc_credit_applied_trans_id xsi:nil="true"/>
+				<ns1:client_acct_id xsi:nil="true"/>
+				<ns1:master_plan_instance_no>3103129</ns1:master_plan_instance_no>
+				<ns1:client_mp_instance_id>3103129</ns1:client_mp_instance_id>
+				<ns1:invoice_transaction_id>22798437</ns1:invoice_transaction_id>
+				<ns1:po_num xsi:nil="true"/>
+				<ns1:bill_from_location_no>944</ns1:bill_from_location_no>
+				<ns1:ship_from_location_no>944</ns1:ship_from_location_no>
+				<ns1:bill_to_address_seq>5211263</ns1:bill_to_address_seq>
+				<ns1:ship_to_address_seq>5211263</ns1:ship_to_address_seq>
+				<ns1:rb_excluded xsi:nil="true"/>
+				<ns1:rb_line_comments xsi:nil="true"/>
+			</ns1:invoice_line_details>
+			<ns1:invoice_line_details>
+				<ns1:line_no>2</ns1:line_no>
+				<ns1:service_no>405</ns1:service_no>
+				<ns1:service_name xsi:nil="true"/>
+				<ns1:units xsi:nil="true"/>
+				<ns1:rate_per_unit xsi:nil="true"/>
+				<ns1:amount>0</ns1:amount>
+				<ns1:description>District Taxes</ns1:description>
+				<ns1:date_range_start xsi:nil="true"/>
+				<ns1:date_range_end xsi:nil="true"/>
+				<ns1:usage_type_no xsi:nil="true"/>
+				<ns1:plan_no xsi:nil="true"/>
+				<ns1:plan_name xsi:nil="true"/>
+				<ns1:credit_reason_cd xsi:nil="true"/>
+				<ns1:credit_reason_code_description xsi:nil="true"/>
+				<ns1:csr_comments xsi:nil="true"/>
+				<ns1:client_sku xsi:nil="true"/>
+				<ns1:order_no xsi:nil="true"/>
+				<ns1:item_no xsi:nil="true"/>
+				<ns1:client_service_id>405</ns1:client_service_id>
+				<ns1:usage_type_cd xsi:nil="true"/>
+				<ns1:client_plan_id xsi:nil="true"/>
+				<ns1:client_item_id xsi:nil="true"/>
+				<ns1:base_plan_units xsi:nil="true"/>
+				<ns1:proration_factor xsi:nil="true"/>
+				<ns1:proration_text xsi:nil="true"/>
+				<ns1:adv_billing_period_total_days xsi:nil="true"/>
+				<ns1:proration_remaining_days xsi:nil="true"/>
+				<ns1:proration_description xsi:nil="true"/>
+				<ns1:line_type>2</ns1:line_type>
+				<ns1:rate_schedule_no xsi:nil="true"/>
+				<ns1:client_rate_schedule_id xsi:nil="true"/>
+				<ns1:rate_schedule_tier_no xsi:nil="true"/>
+				<ns1:credit_coupon_code xsi:nil="true"/>
+				<ns1:plan_instance_no xsi:nil="true"/>
+				<ns1:client_plan_instance_id xsi:nil="true"/>
+				<ns1:tax_related_ind>1</ns1:tax_related_ind>
+				<ns1:svc_credit_source_invoice_no xsi:nil="true"/>
+				<ns1:svc_credit_source_line_no xsi:nil="true"/>
+				<ns1:svc_credit_source_trans_id xsi:nil="true"/>
+				<ns1:svc_credit_applied_line_no xsi:nil="true"/>
+				<ns1:svc_credit_applied_trans_id xsi:nil="true"/>
+				<ns1:client_acct_id xsi:nil="true"/>
+				<ns1:master_plan_instance_no>3103129</ns1:master_plan_instance_no>
+				<ns1:client_mp_instance_id>3103129</ns1:client_mp_instance_id>
+				<ns1:invoice_transaction_id>22798438</ns1:invoice_transaction_id>
+				<ns1:po_num xsi:nil="true"/>
+				<ns1:bill_from_location_no xsi:nil="true"/>
+				<ns1:ship_from_location_no xsi:nil="true"/>
+				<ns1:bill_to_address_seq xsi:nil="true"/>
+				<ns1:ship_to_address_seq xsi:nil="true"/>
+				<ns1:rb_excluded xsi:nil="true"/>
+				<ns1:rb_line_comments xsi:nil="true"/>
+			</ns1:invoice_line_details>
+			<ns1:tax_details>
+				<ns1:tax_detail_line>1</ns1:tax_detail_line>
+				<ns1:seq_num>2</ns1:seq_num>
+				<ns1:taxed_seq_num>1</ns1:taxed_seq_num>
+				<ns1:debit>0</ns1:debit>
+				<ns1:tax_authority_level>5</ns1:tax_authority_level>
+				<ns1:tax_rate>0</ns1:tax_rate>
+				<ns1:orig_was_tax_inclusive xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_id xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_desc xsi:nil="true"/>
+				<ns1:tax_srv_cat_text>Sales and Use Tax</ns1:tax_srv_cat_text>
+				<ns1:tax_srv_juris_nm>CALIFORNIA</ns1:tax_srv_juris_nm>
+				<ns1:tax_srv_tax_sum_text xsi:nil="true"/>
+			</ns1:tax_details>
+			<ns1:tax_details>
+				<ns1:tax_detail_line>2</ns1:tax_detail_line>
+				<ns1:seq_num>2</ns1:seq_num>
+				<ns1:taxed_seq_num>1</ns1:taxed_seq_num>
+				<ns1:debit>0</ns1:debit>
+				<ns1:tax_authority_level>5</ns1:tax_authority_level>
+				<ns1:tax_rate>0</ns1:tax_rate>
+				<ns1:orig_was_tax_inclusive xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_id xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_desc xsi:nil="true"/>
+				<ns1:tax_srv_cat_text>Local Sales and Use Tax</ns1:tax_srv_cat_text>
+				<ns1:tax_srv_juris_nm>LOS ANGELES</ns1:tax_srv_juris_nm>
+				<ns1:tax_srv_tax_sum_text xsi:nil="true"/>
+			</ns1:tax_details>
+			<ns1:tax_details>
+				<ns1:tax_detail_line>3</ns1:tax_detail_line>
+				<ns1:seq_num>2</ns1:seq_num>
+				<ns1:taxed_seq_num>1</ns1:taxed_seq_num>
+				<ns1:debit>0</ns1:debit>
+				<ns1:tax_authority_level>5</ns1:tax_authority_level>
+				<ns1:tax_rate>0</ns1:tax_rate>
+				<ns1:orig_was_tax_inclusive xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_id xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_desc xsi:nil="true"/>
+				<ns1:tax_srv_cat_text>Local Sales and Use Tax</ns1:tax_srv_cat_text>
+				<ns1:tax_srv_juris_nm>MEASURE H TRANSACTIONS AND USE TAX (LACH)</ns1:tax_srv_juris_nm>
+				<ns1:tax_srv_tax_sum_text xsi:nil="true"/>
+			</ns1:tax_details>
+			<ns1:tax_details>
+				<ns1:tax_detail_line>7</ns1:tax_detail_line>
+				<ns1:seq_num>2</ns1:seq_num>
+				<ns1:taxed_seq_num>1</ns1:taxed_seq_num>
+				<ns1:debit>0</ns1:debit>
+				<ns1:tax_authority_level>5</ns1:tax_authority_level>
+				<ns1:tax_rate>0</ns1:tax_rate>
+				<ns1:orig_was_tax_inclusive xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_id xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_desc xsi:nil="true"/>
+				<ns1:tax_srv_cat_text>Local Sales and Use Tax</ns1:tax_srv_cat_text>
+				<ns1:tax_srv_juris_nm>TRANSPORTATION COMMISSION (LATC)</ns1:tax_srv_juris_nm>
+				<ns1:tax_srv_tax_sum_text xsi:nil="true"/>
+			</ns1:tax_details>
+			<ns1:tax_details>
+				<ns1:tax_detail_line>5</ns1:tax_detail_line>
+				<ns1:seq_num>2</ns1:seq_num>
+				<ns1:taxed_seq_num>1</ns1:taxed_seq_num>
+				<ns1:debit>0</ns1:debit>
+				<ns1:tax_authority_level>5</ns1:tax_authority_level>
+				<ns1:tax_rate>0</ns1:tax_rate>
+				<ns1:orig_was_tax_inclusive xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_id xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_desc xsi:nil="true"/>
+				<ns1:tax_srv_cat_text>Local Sales and Use Tax</ns1:tax_srv_cat_text>
+				<ns1:tax_srv_juris_nm>TRANSACTIONS AND USE TAX (LAMA)</ns1:tax_srv_juris_nm>
+				<ns1:tax_srv_tax_sum_text xsi:nil="true"/>
+			</ns1:tax_details>
+			<ns1:tax_details>
+				<ns1:tax_detail_line>6</ns1:tax_detail_line>
+				<ns1:seq_num>2</ns1:seq_num>
+				<ns1:taxed_seq_num>1</ns1:taxed_seq_num>
+				<ns1:debit>0</ns1:debit>
+				<ns1:tax_authority_level>5</ns1:tax_authority_level>
+				<ns1:tax_rate>0</ns1:tax_rate>
+				<ns1:orig_was_tax_inclusive xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_id xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_desc xsi:nil="true"/>
+				<ns1:tax_srv_cat_text>Local Sales and Use Tax</ns1:tax_srv_cat_text>
+				<ns1:tax_srv_juris_nm>TRANSIT DISTRICT (LACT)</ns1:tax_srv_juris_nm>
+				<ns1:tax_srv_tax_sum_text xsi:nil="true"/>
+			</ns1:tax_details>
+			<ns1:tax_details>
+				<ns1:tax_detail_line>4</ns1:tax_detail_line>
+				<ns1:seq_num>2</ns1:seq_num>
+				<ns1:taxed_seq_num>1</ns1:taxed_seq_num>
+				<ns1:debit>0</ns1:debit>
+				<ns1:tax_authority_level>5</ns1:tax_authority_level>
+				<ns1:tax_rate>0</ns1:tax_rate>
+				<ns1:orig_was_tax_inclusive xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_id xsi:nil="true"/>
+				<ns1:tax_srv_tax_type_desc xsi:nil="true"/>
+				<ns1:tax_srv_cat_text>Local Sales and Use Tax</ns1:tax_srv_cat_text>
+				<ns1:tax_srv_juris_nm>METROPOLITAN TRANSIT DISTRICT (LAMT)</ns1:tax_srv_juris_nm>
+				<ns1:tax_srv_tax_sum_text xsi:nil="true"/>
+			</ns1:tax_details>
+			<ns1:is_pending_ind>0</ns1:is_pending_ind>
+			<ns1:custom_status_label xsi:nil="true"/>
+			<ns1:custom_status_desc xsi:nil="true"/>
+			<ns1:client_notes xsi:nil="true"/>
+			<ns1:invoice_type_cd>R</ns1:invoice_type_cd>
+			<ns1:from_date>2017-10-06</ns1:from_date>
+			<ns1:to_date>2017-11-05</ns1:to_date>
+			<ns1:billing_group_no>1308362</ns1:billing_group_no>
+			<ns1:client_billing_group_no>1308362</ns1:client_billing_group_no>
+			<ns1:acct_locale_no>10001</ns1:acct_locale_no>
+			<ns1:acct_locale_name>System_US_English_locale</ns1:acct_locale_name>
+			<ns1:rb_flag>1</ns1:rb_flag>
+			<ns1:rb_status>False</ns1:rb_status>
+			<ns1:orig_invoice_no>10664565</ns1:orig_invoice_no>
+		</ns1:get_invoice_details_mResponseElement>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

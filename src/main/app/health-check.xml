@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+    <flow name="health-checkFlow">
+        <logger message="Entered_Flow=#[flow.name]  MessageId=#[message.id]" level="INFO" category="com.merrillcorp.logging.healthCheck" doc:name="Start of Flow Logger"/>
+        <set-payload value="&lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;soap:Header/&gt;&lt;soap:Body&gt;&lt;lit:get_acct_details_all_m xmlns:lit=&quot;urn:client:api:wsdl:document/literal_wrapped:vers:11.0:aria_complete_m_api&quot;&gt;&lt;client_no&gt;6000228&lt;/client_no&gt;&lt;auth_key&gt;R3WSkfamtH9bMUrACMtm7FAtx7u8vYFy&lt;/auth_key&gt;&lt;acct_no&gt;1607778&lt;/acct_no&gt;&lt;include_master_plans&gt;1&lt;/include_master_plans&gt;&lt;include_supp_plans&gt;1&lt;/include_supp_plans&gt;&lt;/lit:get_acct_details_all_m&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;" doc:name="Set_Testing_Payload"/>
+        <http:request config-ref="HTTP_Aria_Configuration" path="${aria.path}" method="POST" doc:name="GET_Acct_Details_Aria">
+            <http:request-builder>
+                <http:header headerName="SOAPAction" value="&quot;get_acct_details_all_m&quot;"/>
+                <http:header headerName="content-type" value="application/xml"/>
+            </http:request-builder>
+        </http:request>
+        <byte-array-to-object-transformer doc:name="Byte Array to Object"/>
+        <logger message="#[payload]" level="DEBUG" category="com.merrillcorp.logging.healthCheck" doc:name="Logger"/>
+        <choice doc:name="Choice">
+            <when expression="#[message.exception != null]">
+                <set-payload value="{&quot;Status&quot;: &quot;Failure&quot;}" doc:name="SET_Error_Payload"/>
+                <set-property propertyName="http.status" value="500" doc:name="SET_Error_Status"/>
+            </when>
+            <otherwise>
+                <set-payload value="{&quot;Status&quot;: &quot;OK&quot;}" doc:name="SET_Success_Payload"/>
+                <set-property propertyName="http.status" value="200" doc:name="SET_Success_Status"/>
+            </otherwise>
+        </choice>
+        <logger message="Completed_Flow=#[flow.name]  MessageId=#[message.id]" level="INFO" category="com.merrillcorp.logging.healthCheck" doc:name="End of Flow Logger"/>
+    </flow>
+</mule>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:ns1="urn:client:api:wsdl:document/literal_wrapped:vers:11.0:aria_complete_m_api">
+	<SOAP-ENV:Body>
+		<ns1:get_statement_for_invoice_mResponseElement>
+			<ns1:error_code>0</ns1:error_code>
+			<ns1:error_msg>OK</ns1:error_msg>
+			<ns1:out_statement>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"&gt;
+&lt;title&gt;Merrill&lt;/title&gt;
+
+&lt;style media="all" type="text/css"&gt;
+#content { width: 700px; 
+margin: 0 auto;
+border: solid 0px;
+border-color: #000000;
+}
+
+body { font-family: "Times New Roman", Times, serif;
+font-size: 12px; 
+margin:0; 
+padding:0; 
+}
+
+table.logo { border-collapse: collapse;
+border-top: 0px solid #000;
+border-bottom: 0px solid #000000;
+width: 700px;
+}
+
+table.address { border-collapse: collapse;
+width: 700px;
+}
+
+table.details { border-collapse: collapse;
+width: 700px;
+}
+
+table.terms { border-collapse: collapse;
+width: 700px;
+}
+
+tr[add2 = ""] {
+display: none;
+}
+
+tr[add3 = ""] {
+display: none;
+}
+
+tr[cnty = ""] {
+display: none;
+} 
+
+tr[ponum = ""] {
+display: none;
+} 
+
+tr[zero = "0.00"] {
+display: none;
+}
+
+td[orderno *= "order"] {
+display: none;
+}
+
+br[novalue= ""] {
+display: none;
+}
+
+#footer{ display: block;
+margin: 0 auto;
+padding-left: 15px;
+width: 700px;
+position: running(footer);
+bottom:0;  
+} 
+&lt;/style&gt;
+
+&lt;style media="print" type="text/css"&gt;    
+@page { size: 8.5in 11in;
+margin-top: .2in;
+margin-left: .35in;
+margin-right: .5in;
+margin-bottom: 2.1in;
+
+@bottom-left{ width: 100%;
+vertical-align: top;
+text-align: middle;
+content: flow(footer);
+bottom: 0px;
+}    
+
+@bottom-center { width: 75px;
+font-weight: bold;
+font-size: 10px; 
+vertical-align: bottom; 
+content: "Page " counter(page) " of " counter(pages);  
+}
+}
+&lt;/style&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;!-- Americas/So. Europe/Pacific - Merrill Datasite 1 Rebill Template --&gt;
+
+&lt;div id="content"&gt;
+&lt;div&gt;&lt;span style="width: 700px;"&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;
+
+&lt;!-- Logo table --&gt;   
+&lt;table class="logo" align="center" cellpadding="4" cellspacing="2" border="0"&gt;
+&lt;tr&gt;
+&lt;th style="line-height: 0px; width: 450px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th style="line-height: 0px; width: 180px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th style="line-height: 0px; width: 70px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td valign="middle" style="border-top: 3px solid #000;"&gt;&lt;img src="http://www.merrillcorp.com/images/logo.png" style="display:block" alt="logo" height="26" width="221"/&gt;&lt;/td&gt;
+&lt;td valign="middle" style="border-top: 3px solid #000;"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td valign="middle" style="font-weight: bold; text-align: left; font-size: 14px; border-top: 3px solid #000;"&gt;INVOICE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="font-weight: normal; text-align: left; padding-left: 10px; border-top: 3px solid #000; border-bottom: 3px solid #000000;" valign="top"&gt;
+&lt;null&gt;
+&lt;/td&gt;
+&lt;td colspan="2" style="font-weight: normal; text-align: right; border-top: 3px solid #000; border-bottom: 3px solid #000000;" valign="top"&gt;
+&lt;null&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td valign="top"&gt;
+&lt;table style="border-collapse: collapse; width: 440px;" border="0"&gt;
+&lt;tr&gt;
+&lt;th style="line-height: 0px; width: 20px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th style="line-height: 0px; width: 420px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;    
+&lt;td&gt;Gabe Reed Productions&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;Attn: Lori Mahoney&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;444 South Flower Street, Suite 1750&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr add2=""&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr add3=""&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;Los Angeles  CA 90071&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr cnty=""&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;td colspan="2" valign="top"&gt;
+&lt;table style="border-collapse: collapse; width: 240px;" border="0"&gt;
+&lt;tr&gt;
+&lt;th style="line-height: 0px; width: 100px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th style="line-height: 0px; width: 140px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="font-weight: bold; text-align: right;"&gt;Invoice #:&lt;/td&gt;
+&lt;td style="padding-left: 6px;"&gt;10679482&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="font-weight: bold; text-align: right;"&gt;Invoice Date:&lt;/td&gt;
+&lt;td style="padding-left: 6px;"&gt;06-Oct-2017&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="font-weight: bold; text-align: right;"&gt;Customer Vat #:&lt;/td&gt;
+&lt;td style="padding-left: 6px;"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="font-weight: bold; text-align: right;"&gt;Tax IDs #:&lt;/td&gt;
+&lt;td style="padding-left: 6px;"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;!-- Details table --&gt;
+&lt;table class="details" align="center" cellpadding="4" cellspacing="2" border="0"&gt;
+&lt;tr&gt;
+&lt;th style="line-height: 1px; width: 20px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th style="line-height: 1px; width: 75px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th style="line-height: 1px; width: 5px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th style="line-height: 1px; width: 380px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th style="line-height: 1px; width: 115px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th style="line-height: 1px; width: 105px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;!-- Loops --&gt;
+&lt;tr ponum=""&gt;&#13;
+        &lt;td orderno="" colspan="6" style="font-weight: normal; text-align: left;"&gt;&amp;nbsp;&lt;/td&gt;&#13;
+     &lt;/tr&gt;&#13;
+     &lt;tr ponum=""&gt;&#13;
+        &lt;td orderno="" colspan="4" style="font-weight: normal; text-align: left;"&gt;&amp;nbsp;&lt;/td&gt;&#13;
+        &lt;td orderno="" colspan="2" style="font-weight: normal; text-align: left;"&gt;&lt;b&gt;Merrill Order #:&lt;/b&gt; &lt;/td&gt;&#13;
+     &lt;/tr&gt;&#13;
+     &lt;tr ponum=""&gt;&#13;
+        &lt;td orderno="" style="font-weight: normal; text-align: left; border-bottom: 3px solid #000;"&gt;&amp;nbsp;&lt;/td&gt;&#13;
+        &lt;td orderno="" colspan="3" style="font-weight: normal; text-align: left; border-bottom: 3px solid #000;"&gt;&lt;b&gt;Customer Order #:&lt;/b&gt;  &lt;!--  -  --&gt;&lt;/td&gt;&#13;
+        &lt;td orderno="" colspan="2" style="font-weight: normal; text-align: left; border-bottom: 3px solid #000;"&gt;&lt;b&gt;Salesperson:&lt;/b&gt; &lt;/td&gt;&#13;
+     &lt;/tr&gt;&#13;
+     &lt;tr ponum=""&gt;&#13;
+        &lt;td orderno="" colspan="6" style="font-weight: bold; text-align: center;"&gt;&#13;
+         &lt;br novalue=""&gt;&#13;
+          &lt;br novalue=""&gt;&#13;
+        Initial Term  Months&lt;br novalue=""&gt;&#13;
+        Invoice for services  - &lt;br&gt;&#13;
+         &lt;br novalue=""&gt;&#13;
+         &#13;
+        &lt;/td&gt;&#13;
+     &lt;/tr&gt;&#13;
+     &lt;tr ponum=""&gt;&#13;
+        &lt;td orderno="" style="font-weight: bold; text-align: left;"&gt;&amp;nbsp;&lt;/td&gt;&#13;
+        &lt;td orderno="" style="font-weight: bold; text-align: right; text-decoration: underline;"&gt;QTY&lt;/td&gt;&#13;
+        &lt;td orderno="" style="font-weight: bold; text-align: center;"&gt;&amp;nbsp;&lt;/td&gt;&#13;
+        &lt;td orderno="" style="font-weight: bold; text-align: left; text-decoration: underline;"&gt;DESCRIPTION&lt;/td&gt;&#13;
+        &lt;td orderno="" style="font-weight: bold; text-align: right; text-decoration: underline;"&gt;UNIT PRICE&lt;/td&gt;&#13;
+        &lt;td orderno="" style="font-weight: bold; text-align: right; text-decoration: underline;"&gt;TOTAL&lt;/td&gt;&#13;
+     &lt;/tr&gt;&#13;
+     &lt;tr zero="25.00"&gt;&#13;
+        &lt;td freight="" style="font-weight: normal; text-align: left;"&gt;&amp;nbsp;&lt;/td&gt;&#13;
+        &lt;td freight="" style="font-weight: normal; text-align: right;"&gt;1&lt;/td&gt;&#13;
+        &lt;td freight="" style="font-weight: normal; text-align: right;"&gt;&amp;nbsp;&lt;/td&gt;&#13;
+        &lt;td freight="" style="font-weight: normal; text-align: left;"&gt;Monthly Minimum Fee &#13;
+        &lt;!-- &#13;
+    LineNo: 1&#13;
+    ServiceDesc: Monthly Minimum Fee&#13;
+    LineItemUnits: 1&#13;
+    LineItemRate: 25.00&#13;
+    LineItemAmount: 25.00&#13;
+    LineItemComments: &#13;
+    LineItemPoNum: &#13;
+    LineItemOrgLineNo: 1&#13;
+    LineItemOrgServiceNo: 11023545&#13;
+    LineItemOrgServiceDesc: Monthly Minimum Fee&#13;
+    LineItemOrgAmount: 25.00&#13;
+    LineItemOrgPlanName: Pages Uploaded&#13;
+    LineItemOrgPoNum: &#13;
+        --&gt;        &#13;
+        &lt;/td&gt;&#13;
+        &lt;td style="font-weight: normal; text-align: right;"&gt;$25.00&lt;/td&gt;&#13;
+        &lt;td style="font-weight: normal; text-align: right;"&gt;$25.00&lt;/td&gt;&#13;
+     &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="6" style="font-weight: normal; text-align: left;"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="4" style="font-weight: normal; text-align: left;"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style="font-weight: bold; text-align: right;"&gt;Subtotal:&lt;/td&gt;
+&lt;td style="font-weight: bold; text-align: right;"&gt;$25.00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="4" style="font-weight: normal; text-align: left;"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style="font-weight: bold; text-align: right;"&gt;Tax:&lt;/td&gt;
+&lt;td style="font-weight: bold; text-align: right; border-bottom: 2px solid #000000;"&gt;$0.00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="4" style="font-weight: normal; text-align: left;"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style="font-weight: bold; text-align: right;"&gt;Total Invoice USD:&lt;/td&gt;
+&lt;td style="font-weight: bold; text-align: right;"&gt;$25.00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br&gt;
+
+&lt;/div&gt;
+
+&lt;!-- Footer Table --&gt;
+&lt;div id="footer"&gt; 
+&lt;table class="terms" align="center" cellpadding="0" cellspacing="0" border="0"&gt;
+&lt;tr&gt;
+&lt;th style="line-height: 6px; width: 200px; border-top: 3px solid #000;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th style="line-height: 6px; width: 300px; border-top: 3px solid #000;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th style="line-height: 6px; width: 200px; border-top: 3px solid #000;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="3" style="font-weight: normal; text-align: left; padding-left: 10px;"&gt;
+Terms: Due upon receipt X
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="3" style="line-height: 6px; width: 400px; border-bottom: 3px solid #000;"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="3" style="line-height: 6px; width: 400px;"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="font-weight: bold; text-align: left; padding-left: 10px;" valign="top"&gt;
+Remit Check Payment to:&lt;br&gt;Merrill Communications LLC&lt;br&gt;CM-9638&lt;br&gt;St. Paul, MN 55170-9638&lt;br&gt;&lt;br&gt;PLEASE PAY FROM THIS INVOICE&lt;br&gt; (1.5% SERVICE CHARGE PER MONTH ADDED TO PAST DUE ACCOUNTS)&lt;br
+&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style="font-weight: bold; text-align: right; padding-right: 10px;" valign="top"&gt;
+Remit ACH/Fed Wire Payment to:&lt;br&gt;Merrill Communications LLC&lt;br&gt;Account # : 1702-2502-6310&lt;br&gt;USBank, N.A.&lt;br&gt;601 Second Avenue South&lt;br&gt;Minneapolis, MN 55402&lt;br&gt;ABA Routing # : 091 000 022&lt;br&gt;SWIFT CODE USBKUS44IMT&lt;br&gt;Please reference Merrill invoice number on your payment.&lt;br
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+
+&lt;/div&gt;
+
+&lt;!-- GLDebit: 25.00 --&gt;
+&lt;!-- GLAndXferTotalDue: 25.00 --&gt;
+&lt;!-- GLBaseDebit: 25.00 --&gt;
+&lt;!-- GLTaxDebit: 0.00 --&gt;
+&lt;!-- GLTotalTaxAfterCredits: 0.00 --&gt;
+&lt;!-- GLOnlyBaseDebit:  25.00 --&gt;
+&lt;!-- GLOnlyDebit: 25.00 --&gt;
+&lt;!-- GLOnlyTaxDebit: 0.00 --&gt;
+&lt;!-- GLTotalDue: 25.00 --&gt;
+&lt;!-- GLBalDue: 25.00 --&gt;
+&lt;!-- GLTotalRecurringCharges: 0.00 --&gt;
+&lt;!-- GLTotalUsageCharges: 0.00 --&gt;
+&lt;!-- GLBalFwd: 0.00 --&gt;
+&lt;!-- AmountOwed: 25.00 --&gt;
+&lt;!-- AcctTotalBilled:  --&gt;
+&lt;!-- AcctTotalOwed: 25.00 --&gt;
+&lt;!-- HTMLAcctTotalOwed: 25.00 --&gt;
+&lt;!-- AcctTotalNewCharges: 25.00  --&gt;
+&lt;!-- AcctTotalNewEndBalance: 25.00  --&gt;
+&lt;!-- ExtendedAltRate:     --&gt;
+&lt;!-- UsageUnitsTotal: 0   --&gt;
+&lt;!-- UsageUnitsSubtotal: 0  --&gt;
+&lt;!-- UsageAltAmountSubtotal: 0.0000  --&gt;
+&lt;!-- UsageAltAmountTotal: 0.0000  --&gt;
+&lt;!-- UsageGrpAlt_Rate:  --&gt;
+&lt;!-- usageExtendedGrpAlt_Rate:  --&gt;
+&lt;!-- OverdueStmtAmountOwed: 0.00 --&gt;
+&lt;!-- StmtAmountOwed: 25.00 --&gt;
+&lt;!-- CurrentStmtTotalWOs: 0.00 --&gt;
+&lt;!-- MPIAllTotal: 25.00 --&gt;
+&lt;!-- MPIAllChrgTotal : 0.00 --&gt;
+&lt;!-- MPIAppliedTotal : 0.00 --&gt;
+&lt;!-- MPIBGXferTotal  : 0.00 --&gt;
+&lt;!-- TotalTaxesFeesSurcharges  : 0.00  --&gt;
+
+&lt;!-- Balance --&gt;
+&lt;!-- RawAcctTotalOwed: 25.00 --&gt;
+&lt;!-- RawAcctCurrBalOwed: 25.00 --&gt;
+
+&lt;!-- Credits --&gt;
+&lt;!-- AcctTotalCollected: 0.00 --&gt;
+&lt;!-- AcctTotalNewPayments: 0.00  --&gt;
+&lt;!-- GLTotalCredits: 25.00  --&gt;
+&lt;!-- GLCredit: 0.00  --&gt;
+&lt;!-- GLTotalSvcCredits: 0.00  --&gt;
+&lt;!-- CurrentStmtTotalPymts: 0.00  --&gt;
+&lt;!-- CurrentStmtTotalRefunds: 0.00 --&gt;
+&lt;!-- CurrentStmtTotalCredits: 0.00 --&gt;
+&lt;!-- CreditActivityUnappliedAmount :   --&gt;
+&lt;!-- CurrStmtUnappSvcCredBal: 25.00 --&gt;
+&lt;!-- PrevStmtUnappSvcCredBal: 0.00 --&gt;
+&lt;!-- TotalCashandSvcCredits: 0.00  --&gt;
+&lt;!-- MPIAllCrdtTotal : 0.00   --&gt;
+
+&lt;!-- New Strings Per DEV-2905  --&gt;
+&lt;!-- XtaxSrvTaxTypeDesc: taxSrvTaxTypeDesc  --&gt;
+&lt;!-- XtaxSrvTaxAmount: taxSrvTaxAmount  --&gt;
+
+&lt;!-- New Strings Per DEV-2969  --&gt;
+&lt;!-- GLTotalRecurringCharges: 0.00  --&gt;
+&lt;!-- GLTotalUsageCharges: 0.00   --&gt;
+&lt;!-- GLTotalRecurAfterCredits: 0.00  --&gt;
+&lt;!-- GLTotalUsageAfterCredits: 0.00  --&gt;
+&lt;!-- GLRecurDiscountCredits: 0.00   --&gt;
+
+&lt;!-- New Strings Per DEV-3153  --&gt;
+&lt;!-- CashAndServiceCrdts: 0.00  --&gt;
+
+&lt;!-- New Strings Per DEV-4972 --&gt;
+&lt;!-- TotalCashCredits: 0.00 --&gt;
+&lt;!-- TotalServiceCredits: 0.00 --&gt;
+&lt;!-- StmtTotalWOPmtBefTax: 25.00 --&gt;
+&lt;!-- StmtTotalWOPmt: 25.00 --&gt;
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;</ns1:out_statement>
+			<ns1:mime_type>text/html</ns1:mime_type>
+		</ns1:get_statement_for_invoice_mResponseElement>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

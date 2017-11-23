@@ -1,0 +1,207 @@
+<Done>
+	<HTMLString>
+		<?xml version="1.0" encoding="utf-16"?>
+		<html>
+			<head>
+				<meta charset="UTF-8" />
+				<meta http-equiv="x-ua-compatible" content="ie=edge" />
+				<title>CREDIT NOTE FORMAT</title>
+				<meta name="description" content="CREDIT NOTE FORMAT" />
+				<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+				<link rel="stylesheet" type="text/css" href="css/main.css" />
+				<style media="all" type="text/css"> #content { width: 700px; margin: 0 auto; border: solid 0px; border-color: #000000; } body { fnt-family: Helvetica, Arial, sans-serif; font-size: 11px; margin:0; padding:0; } table.logo { border-collapse: collapse; border-top: 3px solid #000; border-bottom: 0px solid #000000; width: 700px; } table.address { border-collapse: collapse; width: 700px; } table.details { border-collapse: collapse; width: 700px; } table.terms { border-collapse: collapse; width: 700px; } tr[tier_2 = ""] { display: none; } td[tier_3 = ""] { display: none; } </style>
+				<style media="print" type="text/css"> @page { size : A4; margin-left: 2.00cm; margin-right: 2.00cm; margin-top: 1.00cm; margin-bottom: .50in; @bottom-center { width: 100%; text-align: left; font-weight: bold; content: counter(Page) " of " counter(pages); } } </style>
+				<style> v.uppercase { text-transform: uppercase; } </style>
+			</head>
+			<body>
+				<div id="content">
+					<div>
+						<span style="width: 700px;" />
+					</div>
+					<table class="logo" align="center" cellpadding="4" cellspacing="2" border="0">
+						<tr>
+							<th style="line-height: 0px; width: 450px;" />
+							<th style="line-height: 0px; width: 180px;" />
+							<th style="line-height: 0px; width: 70px;" />
+						</tr>
+						<tr>
+							<td>
+								<img src="http://www.merrillcorp.com/images/logo.png" height="26" width="221" style="display:block" alt="logo" />
+							</td>
+							<td style="font-weight: bold; text-align: left;" />
+							<td style="font-weight: bold; text-align: right; width: 100px;">CREDIT</td>
+						</tr>
+						<tr>
+							<td style="font-weight: normal; text-align: left; padding-left: 10px; font-size: 12px; border-top: 3px solid #000; border-bottom: 3px solid #000000;" valign="top">INVOICE HEADER LEFT</td>
+							<td colspan="2" style="font-weight: normal; text-align: right; font-size: 12px; border-top: 3px solid #000; border-bottom: 3px solid #000000;" valign="top">INVOICE HEADER RIGHT</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<table style="border-collapse: collapse; width: 440px;" border="0">
+									<tr>
+										<th style="line-height: 0px; width: 20px;" />
+										<th style="line-height: 0px; width: 420px;" />
+									</tr>
+									<tr>
+										<td />
+										<td style="text-align: left; font-size: 12px;">Puma Biotechnology, Inc.</td>
+									</tr>
+									<tr>
+										<td />
+										<td style="text-align: left; font-size: 12px;">AlanAuerbach</td>
+									</tr>
+									<tr>
+										<td />
+										<td style="text-align: left; font-size: 12px;">2025 Sepviva Street</td>
+									</tr>
+									<tr add2="insertStmtAddress2">
+										<td />
+										<td style="text-align: left; font-size: 12px;"></td>
+									</tr>
+									<tr>
+										<td />
+										<td style="text-align: left; font-size: 12px;">PhiladelphiaPA19125</td>
+									</tr>
+									<tr>
+										<td />
+										<td style="text-align: left; font-size: 12px;">US</td>
+									</tr>
+								</table>
+							</td>
+							<td colspan="2" valign="top">
+								<table style="border-collapse: collapse; width: 250px;" border="0">
+									<tr>
+										<th style="line-height: 0px; width: 175px;" />
+										<th style="line-height: 0px; width: 75px;" />
+									</tr>
+									<tr>
+										<td style="font-weight: bold; text-align: right; font-size: 12px;">Original Invoice #:</td>
+										<td style="padding-left: 6px; font-size: 12px;">10047340</td>
+									</tr>
+									<tr>
+										<td style="font-weight: bold; text-align: right; font-size: 12px;">Original Invoice Date:</td>
+										<td style="padding-left: 6px; font-size: 12px;">2017-09-19</td>
+									</tr>
+									<tr>
+										<td style="font-weight: bold; text-align: right; font-size: 12px;">Customer Vat #:</td>
+										<td style="padding-left: 6px; font-size: 12px;"></td>
+									</tr>
+									<tr>
+										<td style="font-weight: bold; text-align: right; font-size: 12px;">Tax IDs #:</td>
+										<td style="padding-left: 6px; font-size: 12px;">0</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					<br />
+					<table class="details" align="center" cellpadding="4" cellspacing="2" border="0">
+						<tr>
+							<th style="line-height: 0px; width: 20px;" />
+							<th style="line-height: 0px; width: 50px;" />
+							<th style="line-height: 0px; width: 200px;" />
+							<th style="line-height: 0px; width: 0px;" />
+							<th style="line-height: 0px; width: 0px;" />
+						</tr>
+						<tr tier_2="insertItemTierLimits">
+							<td tier_3="insertItemTierLimits" colspan="3" style="font-weight: normal; text-align: left;" />
+							<td tier_3="insertItemTierLimits" style="font-weight: normal; text-align: left;" />
+							<td tier_3="insertItemTierLimits" colspan="2" style="font-weight: normal; text-align: left; font-size: 12px;">
+								<b>Merrill Order #:</b>T65JDKMNRU456
+							</td>
+						</tr>
+						<tr tier_2="insertItemTierLimits">
+							<td tier_3="insertItemTierLimits" style="font-weight: normal; text-align: left; border-bottom: 3px solid #000000;" />
+							<td tier_3="insertItemTierLimits" colspan="3" style="font-weight: normal; text-align: left; font-size: 12px; border-bottom: 3px solid #000000">
+								<b>Customer Order #:</b>
+							</td>
+							<td tier_3="insertItemTierLimits" colspan="2" style="font-weight: normal; text-align: left; font-size: 12px; border-bottom: 3px solid #000000">
+								<b>Salesperson:</b>Tommy Salesforce
+							</td>
+						</tr>
+						<tr tier_2="insertItemTierLimits">
+							<td tier_3="insertItemTierLimits" colspan="5" style="font-weight: bold; text-align: center; font-size: 12px;">
+								<br /> Active: 2017-09-19
+								<br /> Initial Term: 
+								<br /> Invoice for services: 
+								<br />
+								<br />
+								<br />
+							</td>
+						</tr>
+						<tr tier_2="insertItemTierLimits">
+							<td tier_3="insertItemTierLimits" style="font-weight: bold; text-align: left;" />
+							<td tier_3="insertItemTierLimits" style="font-weight: bold; text-align: left; text-decoration: underline; font-size: 12px;">QTY</td>
+							<td tier_3="insertItemTierLimits" style="font-weight: bold; text-align: left; text-decoration: underline; font-size: 12px;">DESCRIPTION</td>
+							<td tier_3="insertItemTierLimits" style="font-weight: bold; text-align: right; text-decoration: underline; font-size: 12px;">UNIT PRICE</td>
+							<td tier_3="insertItemTierLimits" style="font-weight: bold; text-align: right; text-decoration: underline; font-size: 12px;">TOTAL</td>
+						</tr>
+						<tr>
+							<td style="font-weight: normal; text-align: left;" />
+							<td style="font-weight: normal; text-align: left; font-size: 12px;">10000</td>
+							<td style="font-weight: normal; text-align: left; font-size: 12px;">PgUploaded (10,000 pages @ $2)</td>
+							<td style="font-weight: normal; text-align: right; font-size: 12px;">2.00</td>
+							<td style="font-weight: normal; text-align: right; font-size: 12px;">20,000.00</td>
+						</tr>
+						<tr>
+							<td style="font-weight: normal; text-align: left;" />
+							<td style="font-weight: normal; text-align: left; font-size: 12px;">2</td>
+							<td style="font-weight: normal; text-align: left; font-size: 12px;">Closure Media (encrypted) (order # 477634)</td>
+							<td style="font-weight: normal; text-align: right; font-size: 12px;">0.00</td>
+							<td style="font-weight: normal; text-align: right; font-size: 12px;">0.00</td>
+						</tr>
+						<tr>
+							<td style="font-weight: normal; text-align: left;" />
+							<td style="font-weight: normal; text-align: left; font-size: 12px;">2</td>
+							<td style="font-weight: normal; text-align: left; font-size: 12px;">Closure Media (encrypted) (order # 477633)</td>
+							<td style="font-weight: normal; text-align: right; font-size: 12px;">250.00</td>
+							<td style="font-weight: normal; text-align: right; font-size: 12px;">500.00</td>
+						</tr>
+						<tr>
+							<td colspan="5" style="font-weight: normal; text-align: left;" />
+						</tr>
+						<tr>
+							<td colspan="3" style="font-weight: normal; text-align: left;" />
+							<td style="font-weight: bold; text-align: right; font-size: 12px;">Sub Total:</td>
+							<td style="font-weight: bold; text-align: right; border-bottom: 2px solid #000000; font-size: 12px;">$20,500.00</td>
+						</tr>
+						<tr>
+							<td colspan="3" style="font-weight: normal; text-align: left;" />
+							<td style="font-weight: bold; text-align: right; font-size: 12px;">Tax:</td>
+							<td style="font-weight: bold; text-align: right; border-bottom: 2px solid #000000; font-size: 12px;">$0.00</td>
+						</tr>
+						<tr>
+							<td colspan="3" style="font-weight: normal; text-align: left;" />
+							<td style="font-weight: bold; text-align: right; font-size: 12px;">Total Invoice: 
+								<v class="uppercase">usd</v>
+							</td>
+							<td style="font-weight: bold; text-align: right; font-size: 12px;">$20,500.00</td>
+						</tr>
+					</table>
+					<br />
+					<table class="terms" align="center" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<th style="line-height: 6px; width: 200px; border-top: 3px solid #000;" />
+							<th style="line-height: 6px; width: 300px; border-top: 3px solid #000;" />
+							<th style="line-height: 6px; width: 200px; border-top: 3px solid #000;" />
+						</tr>
+						<tr>
+							<td colspan="3" style="font-weight: normal; text-align: left; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; font-size: 12px;" />
+						</tr>
+						<tr>
+							<td colspan="3" style="line-height: 6px; width: 400px; border-bottom: 3px solid #000;" />
+						</tr>
+						<tr>
+							<td colspan="3" style="line-height: 6px; width: 400px;" />
+						</tr>
+						<tr>
+							<td style="font-size: 12px; font-weight: bold; width: 1000px; text-align: left; padding-left: 10px; padding-top: 5px; padding-bottom: 5px;" valign="top">INVOICE FOOTER LEFT</td>
+							<td />
+							<td style="font-size: 12px; font-weight: bold; width: 1000px; text-align: right; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;" valign="top">INVOICE FOOTER RIGHT</td>
+						</tr>
+					</table>
+				</div>
+			</body>
+		</html>
+	</HTMLString>
+</Done>

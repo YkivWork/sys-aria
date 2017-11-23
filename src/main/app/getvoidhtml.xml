@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+    <flow name="getvoidhtmlFlow">
+        <logger message="Entered_Flow=#[flow.name]  MessageId=#[message.id]" level="INFO" category="com.merrillcorp.logging.getvoidhtml" doc:name="Start of Flow Logger"/>
+        <http:request config-ref="Aria_Workflow_Request_Configuration" path="${aria.workflow.path}" method="GET" doc:name="Aria Html">
+            <http:request-builder>
+                <http:query-param paramName="FlowId" value="6dd9aea7-9958-11e7-b02d-00155d142d0e"/>
+                <http:query-param paramName="Action" value="api"/>
+                <http:query-param paramName="sessionid" value="NS-f41237b5-1a51-11e7-8db7-00155d142d0e"/>
+                <http:query-param paramName="outputtype" value="XML"/>
+                <http:query-param paramName="AriaAccountNumber" value="#[flowVars.accountNumber]"/>
+                <http:query-param paramName="InvoiceNumber" value="#[flowVars.invoiceNumber]"/>
+            </http:request-builder>
+        </http:request>
+        <byte-array-to-object-transformer doc:name="Byte Array to Object"/>
+        <logger message="Completed_Flow=#[flow.name]  MessageId=#[message.id]" level="INFO" category="com.merrillcorp.logging.getvoidhtml" doc:name="End of Flow Logger"/>
+    </flow>
+</mule>

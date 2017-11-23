@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header/>
+  <soap:Body>
+    <create_order_m xmlns="urn:client:api:wsdl:document/literal_wrapped:vers:10.0:aria_complete_m_api">
+      <client_no>6000228</client_no>
+      <auth_key>R3WSkfamtH9bMUrACMtm7FAtx7u8vYFy</auth_key>
+      <acct_no xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+      <client_acct_id></client_acct_id>
+      <client_plan_instance_id></client_plan_instance_id>
+      <plan_instance_no xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+      <client_order_id>WO-1710112</client_order_id>
+      <order_comments xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+      <order_line_items>
+        <order_line_items_row>
+          <item_dest_contact_idx>1</item_dest_contact_idx>
+          <client_item_svc_location_id>STP</client_item_svc_location_id>
+          <client_sku>2239</client_sku>
+          <units>1.0</units>
+          <amount>250</amount>
+        </order_line_items_row>
+      </order_line_items>
+      <contacts>
+        <contacts_row>
+          <contact_idx>1</contact_idx>
+          <first_name>test</first_name>
+          <last_name>test</last_name>
+          <company_name>test</company_name>
+          <address1>1 Main St</address1>
+          <address2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <address3 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          <city>St Paul</city>
+          <state_prov>MN</state_prov>
+          <country>United States</country>
+          <postal_cd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </contacts_row>
+      </contacts>
+    </create_order_m>
+  </soap:Body>
+</soap:Envelope>

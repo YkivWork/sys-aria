@@ -1,0 +1,282 @@
+#%RAML 1.0
+title: sys-aria
+version: 1.0
+baseUri: http://127.0.0.1/api/{version}
+documentation:
+  - title: Home
+    content: |
+      This is the system layer in front of aria and will be responsible calling the raw Aria API.
+description: |
+      This API will be provide easy access to the Aria API and be responsible for breaking down the responses to usable items for the proc layer, as well as reliably posting objects into Aria
+protocols: HTTPS
+mediaType: application/json
+/aria:
+  /healthcheck:
+    displayName: Aria-Health-Check
+    description: This Endpoint is Utilized for Ensuring a Connection to the Aria API
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              example: {Status: "Aria Connection is Available"}
+        400:
+          body:
+            application/json:
+              example: {"Status": "Aria Connection Not Available"}
+        500:
+          body:
+            application/json:
+              example: {Status: "Internal Server Error"}
+  /invoice-details:
+    displayName: Aria-Invoice-Details
+    description: Call to get Invoice details from Aria.
+    get:
+      queryParameters:
+        accountNumber:
+        invoiceNumber:
+      responses:
+        200:
+          body:
+            text/xml:
+              example: !include examples/inv-details.xml
+        400:
+          body:
+            application/json:
+              example: {"Status": "Aria Connection Not Available"}
+        500:
+          body:
+            application/json:
+              example: {Status: "Internal Server Error"}
+  /account-details:
+    displayName: Aria-Account-Details
+    description: Call to get Account details from Aria.
+    get:
+      queryParameters:
+        accountNumber:
+      responses:
+        200:
+          body:
+            text/xml:
+              example: !include examples/acct-details.xml
+        404:
+          body:
+            application/json:
+              example: {"message": "Expenditure Not Found"}
+        500:
+          body:
+            application/json:
+              example: {Status: "Internal Server Error"}
+  /account-contacts:
+    displayName: Aria-Account-Contacts
+    description: Call to get Account Contacts from Aria.
+    get:
+      queryParameters:
+        accountNumber:
+      responses:
+        200:
+          body:
+            text/xml:
+              example: !include examples/acct-contacts.xml
+        400:
+          body:
+            application/json:
+              example: {"Status": "Aria Connection Not Available"}
+        500:
+          body:
+            application/json:
+              example: {Status: "Internal Server Error"}
+  /order:
+    displayName: Get-Order-Creation-Date
+    description: Call to get Order Creation Date from Aria
+    get:
+      queryParameters:
+        accountNumber:
+        orderNumber:
+      responses:
+        200:
+          body:
+            text/xml:
+              example: !include examples/order-details.xml
+        400:
+          body:
+            application/json:
+              example: {"Status": "Aria Connection Not Available"}
+        500:
+          body:
+            application/json:
+              example: {Status: "Internal Server Error"}
+  /credit-memo:
+    displayName: Credit-Memo-From-Aria
+    description: Call to get Credit Memo from Aria
+    get:
+      queryParameters:
+        accountNumber:
+        cmNumber:
+      responses:
+        200:
+          body:
+            text/xml:
+              example: !include examples/credit-memo.xml
+        400:
+          body:
+            application/json:
+              example: {"Status": "Aria Connection Not Available"}
+        500:
+          body:
+            application/json:
+              example: {Status: "Internal Server Error"}
+  /html-invoice:
+    displayName: Invoice-Html
+    description: Call to get Invoice Html from Aria
+    get:
+      queryParameters:
+        accountNumber:
+        invoiceNumber:
+      responses:
+        200:
+          body:
+            text/xml:
+              example: !include examples/html-invoice.xml
+        400:
+          body:
+            application/json:
+              example: {"Status": "Aria Connection Not Available"}
+        500:
+          body:
+            application/json:
+              example: {Status: "Internal Server Error"}
+  /html-void-invoice:
+    displayName: Invoice-Void-Html
+    description: Call to get Void Invoice Html from Aria
+    get:
+      queryParameters:
+        accountNumber:
+        invoiceNumber:
+      responses:
+        200:
+          body:
+            text/xml:
+              example: !include examples/html-void-invoice.xml
+        400:
+          body:
+            application/json:
+              example: {"Status": "Aria Connection Not Available"}
+        500:
+          body:
+            application/json:
+              example: {Status: "Internal Server Error"}
+  /billing-group:
+    displayName: Get-Billing-Group
+    description: Call to get Billing Group details from Aria
+    get:
+      queryParameters:
+        accountNumber:
+      responses:
+        200:
+          body:
+            text/xml:
+              example: !include examples/billing-group-details.xml
+        400:
+          body:
+            application/json:
+              example: {"Status": "Aria Connection Not Available"}
+        500:
+          body:
+            application/json:
+              example: {Status: "Internal Server Error"}
+  /update-contact:
+    displayName: Update Contacts
+    description: Call to get Update Contacts in Aria
+    get:
+      queryParameters:
+        accountNumber:
+          required: true
+        contactInd:
+          required: true
+        billingGroupNumber:
+          required: false
+        firstName:
+          required: false
+        lastName:
+          required: false
+        middleInitial:
+          required: false
+        companyName:
+          required: true
+        address1:
+          required: false
+        address2:
+          required: false
+        address3:
+          required: false
+        city:
+          required: false
+        locality:
+          required: false
+        stateProvince:
+          required: false
+        country:
+          required: false
+        postalCode:
+          required: false
+        phone:
+          required: false
+        email:
+          required: false
+      responses:
+        200:
+          body:
+            text/xml:
+              example: !include examples/update-contact.xml
+        400:
+          body:
+            application/json:
+              example: {"Status": "Aria Connection Not Available"}
+        500:
+          body:
+            application/json:
+              example: {Status: "Internal Server Error"}
+  /closure-work-order:
+    displayName: Closure-Work-Order
+    description: Call to create Closure Work Order in Aria
+    post:
+      queryParameters:
+        SplitBillingAccounts:
+          required: false
+      body:
+        application/xml:
+          example: !include examples/closure-request.xml
+      responses:
+        200:
+          body:
+            application/xml:
+              example: !include examples/closure-response.xml
+        400:
+          body:
+            application/json:
+              example: {"Status": "Aria Connection Not Available"}
+        500:
+          body:
+            application/json:
+              example: {Status: "Internal Server Error"}
+  /non-closure-work-order:
+    displayName: Non-Closure-Work-Order
+    description: Call to create Non Closure Work Order in Aria
+    post:
+      body:
+        application/xml:
+          example: !include examples/nonClosure-request.xml
+      responses:
+        200:
+          body:
+            application/xml:
+              example: !include examples/nonClosure-response.xml
+        400:
+          body:
+            application/json:
+              example: {"Status": "Aria Connection Not Available"}
+        500:
+          body:
+            application/json:
+              example: {Status: "Internal Server Error"}

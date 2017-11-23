@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+    <flow name="billtoworkflowFlow">
+        <logger message="Entered_Flow=#[flow.name]  MessageId=#[message.id]" level="INFO" doc:name="Start of Flow Logger"/>
+        <http:request config-ref="Aria_Workflow_Request_Configuration" path=" ${aria.workflow.path}" method="GET" doc:name="HTTP">
+            <http:request-builder>
+                <http:query-param paramName="FlowPath" value="${aria.workflow.billto.flowpath}"/>
+                <http:query-param paramName="Action" value="api"/>
+                <http:query-param paramName="sessionid" value="${aria.workflow.billto.sessionid}"/>
+                <http:query-param paramName="outputtype" value="XML"/>
+                <http:query-param paramName="FromAcctNo" value="#[sessionVars.billedParty.billingSystemAccountId]"/>
+                <http:query-param paramName="FromMPI" value="#[sessionVars.billedParty.billingSystemMasterPlanId]"/>
+                <http:query-param paramName="ToAcctNo" value="#[sessionVars.billedParty.toBeBillingSystemAccount.billingSystemAccountId]"/>
+                <http:query-param paramName="ToMPI" value="#[sessionVars.billedParty.toBeBillingSystemAccount.billingSystemMasterPlanId]"/>
+                <http:query-param paramName="Void" value="#[sessionVars.billedParty.sourceData.retroChange]"/>
+                <http:query-param paramName="Terminate" value="#[sessionVars.billedParty.billedPartyDirective.billToWorkFlowTermination]"/>
+                <http:query-param paramName="No_Copy" value="false"/>
+                <http:query-param paramName="Retro" value="sessionVars.billedParty.sourceData.retroChange"/>
+            </http:request-builder>
+        </http:request>
+        <logger message="Completed_Flow=#[flow.name]  MessageId=#[message.id]" level="INFO" doc:name="End of Flow Logger"/>
+    </flow>
+</mule>

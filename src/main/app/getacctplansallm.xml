@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd">
+    <flow name="getAcctPlansAllM" processingStrategy="synchronous">
+        <logger level="INFO" doc:name="Start of Flow Logger" category="com.merrillcorp.logging.getacctplansallm" message="Entered_Flow=#[flow.name]  MessageId=#[message.id]"/>
+        <dw:transform-message doc:name="Transform Message">
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/xml
+%namespace soap http://schemas.xmlsoap.org/soap/envelope/
+%namespace aria urn:client:api:wsdl:document/literal_wrapped:vers:11.0:aria_complete_m_api
+---
+{
+	soap#Envelope: {
+	  soap#Header: {},
+	  soap#Body: {
+			aria#get_acct_plans_all_m: {
+				client_no: p('aria.client_no'),
+				auth_key: p('aria.auth_key'),
+				acct_no: flowVars.aria.ariaAcct,
+				include_service_supp_fields: "TRUE"
+					}
+				}
+			}
+		}]]></dw:set-payload>
+        </dw:transform-message>
+        <http:request config-ref="HTTP_Aria_Configuration" path="${aria.path}" method="POST" doc:name="HTTP">
+            <http:request-builder>
+                <http:header headerName="SOAPAction" value="&quot;get_acct_plans_all_m&quot;"/>
+            </http:request-builder>
+        </http:request>
+        <logger level="INFO" doc:name="End of Flow Logger" category="com.merrillcorp.logging.getacctplansallm" message="Completed_Flow=#[flow.name]  MessageId=#[message.id]"/>
+    </flow>
+</mule>

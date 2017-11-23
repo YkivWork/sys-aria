@@ -1,0 +1,18 @@
+<aria_workflow_response>
+<aria_response>
+
+<api_name></api_name>
+
+<error_code>999</error_code>
+
+<error_message>Error running step Is MPI > 0[GreaterThan] in flow WorkOrderSplit: Error running step: Get Number From String (decimal) 1</error_message>
+
+<input_parameters></input_parameters>
+
+</aria_response> 
+<workflow_response_code>999</workflow_response_code>
+
+<workflow_response_message>Error running step Is MPI > 0[GreaterThan] in flow WorkOrderSplit: Error running step: Get Number From String (decimal) 1</workflow_response_message>
+<tracking_id></tracking_id> 
+
+</aria_workflow_response>
